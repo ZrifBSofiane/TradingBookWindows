@@ -6,10 +6,13 @@
              xmlns:local="clr-namespace:TradingBook"
              mc:Ignorable="d" Height="73.993" >
     
-    <Border  >
+  
 
-        <Grid Background="Gray">
-            <Grid.ColumnDefinitions>
+        <Grid Background="#ffffff">
+        <Grid.Effect>
+            <DropShadowEffect/>
+        </Grid.Effect>
+        <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -19,20 +22,24 @@
               Grid.Row="0">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
                         <RowDefinition Height="5*"></RowDefinition>
-                        <RowDefinition Height="5*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0"
                         Grid.Row="0">
-                        <Label Content="Currency" FontSize="18"></Label>
+                        <Viewbox Margin="30,10,0,0" HorizontalAlignment="Left">
+                            <TextBlock Text="Currency" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                        </Viewbox>
                     </Grid>
                     <Grid Grid.Column="0"
                         Grid.Row="1">
-                        <Label Name="currencyLabel" Content="EURUSD" FontSize="22"></Label>
+                    <Viewbox Margin="30,10,0,5" HorizontalAlignment="Left">
+                        <TextBlock Text="EURUSD" Foreground="#FF575C93" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent" />
+                        </Viewbox>
                     </Grid>
                     <Grid Grid.Column="0"
-                        Grid.Row="2" Background="LightGray">
+                        Grid.Row="2" Background="#f0f1f6">
                     </Grid>
                 </Grid>
             </Grid>
@@ -41,20 +48,24 @@
               Grid.Row="0">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
                         <RowDefinition Height="5*"></RowDefinition>
-                        <RowDefinition Height="5*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0"
                         Grid.Row="0">
-                        <Label Content="Direction" FontSize="18"></Label>
+                    <Viewbox Margin="30,10,0,0" HorizontalAlignment="Left">
+                            <TextBlock Text="Direction" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                        </Viewbox>
                     </Grid>
                     <Grid Grid.Column="0"
                         Grid.Row="1">
-                        <Label Name="tradePositionLabel" Content="Buy" FontSize="22"></Label>
+                    <Viewbox Margin="30,10,0,5" HorizontalAlignment="Left">
+                        <TextBlock Text="Buy" Foreground="#FF575C93" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                        </Viewbox>
                     </Grid>
                     <Grid Grid.Column="0"
-                        Grid.Row="2" Background="LightGray">
+                        Grid.Row="2" Background="#f0f1f6">
                     </Grid>
                 </Grid>
             </Grid>
@@ -63,26 +74,30 @@
               Grid.Row="0">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
                         <RowDefinition Height="5*"></RowDefinition>
-                        <RowDefinition Height="5*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0"
                         Grid.Row="0">
-                        <Label Content="Profit and Loss"  FontSize="18"></Label>
+                    <Viewbox Margin="30,10,0,0" HorizontalAlignment="Left">
+                            <TextBlock Text="Profit/Loss" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                        </Viewbox>
                     </Grid>
                     <Grid Grid.Column="0"
                         Grid.Row="1">
-                        <Label Name="profitLabel" Content="12,6£" FontSize="22"></Label>
+                    <Viewbox Margin="30,10,0,5" HorizontalAlignment="Left">
+                        <TextBlock Text="56.7$" Foreground="#FF575C93" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                        </Viewbox>
                     </Grid>
                     <Grid Grid.Column="0"
-                        Grid.Row="2" Background="LightGray">
+                        Grid.Row="2" Background="#f0f1f6">
                     </Grid>
                 </Grid>
             </Grid>
 
         </Grid>
 
-    </Border>
+    
     
 </UserControl>

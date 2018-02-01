@@ -6,9 +6,50 @@
         xmlns:local="clr-namespace:TradingBook"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Rectangle Name="StrecthRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FFF0F1F6" />
+                            <Rectangle Name="bottomRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="#FF575C93" Height="10" Margin="10,0,10,0" />
+                            <DockPanel>
+                                <ContentPresenter Name="ContentButton" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                            </DockPanel>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="False">
+                                <Setter Property="Rectangle.Fill" TargetName="bottomRectangle" Value="#FFF0F1F6"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="TextBlock.Foreground" TargetName="ContentButton" Value="#FF575C93"></Setter>
+                                <Setter Property="TextBlock.FontWeight" TargetName="ContentButton" Value="ExtraBold"></Setter>
+                            </Trigger>
+                            
+                          
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard Name="mouseEnterBeginStoryboard">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="bottomRectangle" Storyboard.TargetProperty="Width" From="0" To="200"   Duration="0:0:0.5"></DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    
+    
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -17,7 +58,7 @@
         
         <Grid Grid.Column="0" 
               Grid.Row="0"
-              Background="AliceBlue">
+             >
 
 
             <Grid>
@@ -53,7 +94,7 @@
                 <Grid Grid.Column="4" 
                         Grid.Row="0"
                         Background="LightYellow">
-                    <Button Content="Trade" Name="tradeButton" Click="tradeButton_Click"/>
+                    <Button Content="Trade" Name="tradeButton" Width="Auto" Click="tradeButton_Click"/>
                 </Grid>
                 <Grid Grid.Column="5" 
                         Grid.Row="0"

@@ -6,9 +6,9 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:local="clr-namespace:TradingBook"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
-             Background="White">
-    <Grid>
+             d:DesignHeight="600" d:DesignWidth="600"
+             Background="Black">
+    <Grid Background="#f0f1f6">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
@@ -19,7 +19,7 @@
         <!-- **********************   Name Layout -->
         <Grid Grid.Column="0" 
                         Grid.Row="0"
-                        Background="LightGray">
+                        >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -30,8 +30,9 @@
 
                 <Grid Grid.Column="1"
                       Grid.Row="0">
-                    <Label Name="statusLabel"  Content="Labeledcefregsfvsfdvbhbhdsvklcx  hbdsycqndsjkcx  ibdscwx /n zdsx" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="48" FontFamily="Trebuchet MS"/>
-
+                    <Viewbox HorizontalAlignment="Left" Margin="0,20,0,20">
+                        <TextBlock Name="statusLabel"  Width="Auto" Height="Auto"  VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap"  Foreground="#FF575C93" Background="Transparent" FontFamily="Malgun Gothic"/>
+                    </Viewbox>
                 </Grid>
             </Grid>
 
@@ -39,8 +40,20 @@
         <!-- **********************   Chart Layout -->
         <Grid Grid.Column="0" 
                         Grid.Row="1"
-                        Background="LightGray">
-
+                       >
+            <Grid.Resources>
+                <Style TargetType="lvc:LineSeries">
+                    <Setter Property="StrokeThickness" Value="0"></Setter>
+                    <Setter Property="Stroke" Value="White"></Setter>
+                    <Setter Property="Fill" Value="#4EFFFFFF"></Setter>
+                    <Setter Property="PointGeometrySize" Value="0"></Setter>
+                    <Setter Property="LineSmoothness" Value="10"></Setter>
+                </Style>
+                <Style TargetType="lvc:Axis">
+                    <Setter Property="ShowLabels" Value="True"></Setter>
+                    <Setter Property="IsEnabled" Value="False"></Setter>
+                </Style>
+            </Grid.Resources>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -48,13 +61,23 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
+                <Grid Grid.Column="1" Grid.Row="0" Background="#575c93">
+                    <Grid.Effect>
+                        <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
+                    </Grid.Effect>
 
-                <Grid Grid.Column="1"
-                      Grid.Row="0">
-                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Background="Gray">
 
+                    <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93">
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
                     </lvc:CartesianChart>
+
                 </Grid>
+
             </Grid>
         </Grid>
 
@@ -62,9 +85,9 @@
 
 
         <!-- **********************   Pie Chart Layout -->
-        <Grid Grid.Column="0" 
-                        Grid.Row="2"
-                        Background="LightGray">
+        <Grid Grid.Column="0" Grid.Row="2" >
+                      
+                        
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -72,41 +95,70 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                
-              
 
-                    <Grid Grid.Column="1"
+
+
+                <Grid Grid.Column="1"
                       Grid.Row="0">
 
-                    <Grid>
+                    <Grid  Background="White">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="1.5*"></RowDefinition>
                             <RowDefinition Height="5*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
                         </Grid.RowDefinitions>
 
                         <Grid Grid.Column="1"
                               Grid.Row="2">
-                            <Label Content="Last Trade" FontSize="36" VerticalAlignment="Bottom"></Label>
-                        </Grid>    
-                        
-                        <Grid Grid.Column="1"
-                              Grid.Row="0"
-                              Background="LightGray">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="3*"/>
-                            </Grid.RowDefinitions>
-                            <Label Content="Overview" FontSize="36" VerticalAlignment="Bottom" Margin="0,0,-0.4,0.2" Grid.RowSpan="2"></Label>
-                        </Grid>
-                        <Grid Grid.Column="1"
-                              Grid.Row="1"
-                              Background="Gray">
-
                             <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" Grid.Row="0">
+                                    <Viewbox Margin="50,0,50,10">
+                                        
+                                            <TextBlock Name="dailyRevenueTB" Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="WrapWithOverflow" Background="Transparent">
+                                                <Span Name="spanCirculation" Foreground="Red">50% </Span> <Span Name="spanAfterCirculation"></Span>
+                                            </TextBlock>
+                                     
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Column="1" Grid.Row="0">
+                                    <Viewbox  Margin="0,0,0,10">
+                                        <TextBlock  Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="WrapWithOverflow" Background="Transparent">
+                                               <Span Name="spanBeforeReached">You reached </Span> <Span Name="spanTextReached" Foreground="Red">34%</Span> <Span Name="spanAfterReached"></Span>
+                                        </TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Column="2" Grid.Row="0">
+                                    <Viewbox  Margin="0,0,0,10">
+                                        <TextBlock  Width="Auto" Height="Auto" TextAlignment="Center" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="WrapWithOverflow" Background="Transparent">
+                                            <Span Name="spanComparaison" Foreground="#FF16A058">76%</Span> <Span Name="spanAfterComparaison"></Span>
+                                        </TextBlock>
+                                    </Viewbox>
+                                </Grid>
+
+
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="0" Background="#FFF0F1F6">
+                            <Viewbox HorizontalAlignment="Left" Margin="0,5,0,5">
+                                <TextBlock Text="Overview" Width="Auto" Height="Auto"   FontStretch="UltraExpanded"  FontFamily="Malgun Gothic" TextWrapping="Wrap" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF575C93"/>
+                            </Viewbox>
+                           
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="1">
+                              
+                              
+
+                            <Grid >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"></RowDefinition>
-                                    <RowDefinition Height="7*"></RowDefinition>
+                                    <RowDefinition Height="5*"></RowDefinition>
                                 </Grid.RowDefinitions>
 
                                 <Grid Grid.Column="1"
@@ -119,15 +171,21 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0"
                                               Grid.Row="0">
-                                            <Label Content="Daily Revenue" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center"></Label>
+                                            <Viewbox Margin="0,10,0,0">
+                                                <TextBlock  Text="Daily revenue" Foreground="#FF575C93"  FontFamily="Franklin Gothic Medium" Width="Auto" Height="Auto"   FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                                            </Viewbox>
                                         </Grid>
                                         <Grid Grid.Column="1"
                                               Grid.Row="0">
-                                            <Label Content="Daily Revenue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                                            <Viewbox Margin="0,10,0,0">
+                                                <TextBlock Text="Daily Revenue" Foreground="#FF575C93"  FontFamily="Franklin Gothic Medium" Width="Auto" Height="Auto"   FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                                            </Viewbox>
                                         </Grid>
                                         <Grid Grid.Column="2"
                                               Grid.Row="0">
-                                            <Label Content="Daily Revenue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                                            <Viewbox Margin="0,10,0,0">
+                                                <TextBlock Text="Daily Revenue" Foreground="#FF575C93"   FontFamily="Franklin Gothic Medium" Width="Auto" Height="Auto"   FontStretch="UltraExpanded" TextWrapping="Wrap" Background="Transparent"/>
+                                            </Viewbox>
                                         </Grid>
 
                                     </Grid>
@@ -135,7 +193,7 @@
                                 </Grid>
 
                                 <Grid Grid.Column="1"
-                                        Grid.Row="1">
+                                        Grid.Row="1" >
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -145,19 +203,19 @@
 
                                         <Grid Grid.Column="0"
                                               Grid.Row="0">
-                                            <lvc:Gauge Grid.Row="0" Grid.Column="0" Margin="5"
+                                            <lvc:Gauge Grid.Row="0" Grid.Column="0"  Margin="5,5,5,5"
                                                     Uses360Mode="True"
                                                     From="0" To="100" Value="50" FromColor="Green" ToColor="Red" />
                                         </Grid>
                                         <Grid Grid.Column="1"
                                               Grid.Row="0">
-                                            <lvc:Gauge Grid.Row="0" Grid.Column="0" Margin="5"
+                                            <lvc:Gauge Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"
                                                     Uses360Mode="True"
                                                     From="0" To="100" Value="34" />
                                         </Grid>
                                         <Grid Grid.Column="2"
                                               Grid.Row="0">
-                                            <lvc:Gauge Grid.Row="0" Grid.Column="0" Margin="5"
+                                            <lvc:Gauge Grid.Row="0" Grid.Column="0"  Margin="5,5,5,5"
                                                     Uses360Mode="True"
                                                     From="0" To="100" Value="76" />
                                         </Grid>
@@ -182,16 +240,36 @@
 
 
         <!-- **********************   List View and Goal Layout -->
-        <Grid Grid.Column="0" 
-                        Grid.Row="3"
-                        Background="LightGray">
+        <Grid Grid.Column="0"  Grid.Row="3" >
+                        
+                       
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1"
+                              Grid.Row="0">
+                            <Viewbox Margin="0,10,0,10" HorizontalAlignment="Left">
+                                <TextBlock Text="Last Trade" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                </Grid>
                 <Grid Grid.Column="0"
-                      Grid.Row="0">
+                      Grid.Row="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -201,7 +279,7 @@
                         <Grid Grid.Column="1"
                               Grid.Row="0">
                             <!-- here list view of last trade-->
-                            <ScrollViewer >
+                            <ScrollViewer Background="#f0f1f6" Opacity="0.975">
                                 <StackPanel Name="tradePanel"  >
                                     <local:TradeListViewLayout></local:TradeListViewLayout>
                                     <local:TradeListViewLayout></local:TradeListViewLayout>
@@ -214,10 +292,10 @@
                                     <local:TradeListViewLayout></local:TradeListViewLayout>
                                 </StackPanel>
                             </ScrollViewer>
-                            
+
                         </Grid>
                     </Grid>
-                    
+
 
                 </Grid>
 

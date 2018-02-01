@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Web;
 
 namespace TradingBook
 {
@@ -23,7 +24,17 @@ namespace TradingBook
         public HomeLayout()
         {
             InitializeComponent();
-            statusLabel.Content = "Welcome back Sofiane ! \n Your total revenue for this month so far is : 15.456£";
+            statusLabel.Inlines.Add(new Run("Welcome back "));
+            statusLabel.Inlines.Add(new Bold(new Run("Sofiane !")));
+            statusLabel.Inlines.Add(new Run("\nYour total revenue for this month so far is: "));
+            statusLabel.Inlines.Add(new Bold(new Run("15.426,90$")));
+
+            spanAfterCirculation.Inlines.Add(new Run("of your revenue is \nstill in circulation"));
+            spanAfterReached.Inlines.Add(new Run("of \nlast days revenue"));
+            spanAfterComparaison.Inlines.Add(new Run(" more income \n compared to last month"));
+
+
+
         }
     }
 }
