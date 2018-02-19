@@ -299,6 +299,33 @@
 
                 </Grid>
 
+
+
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1"
+                              Grid.Row="0">
+                            <Viewbox Margin="0,10,0,10" HorizontalAlignment="Left">
+                                <TextBlock Text="Some stats" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid>
+
+                        <local:GoalLayout x:Name="GoalLayout"></local:GoalLayout>
+                        
+                    </Grid>
+                </Grid>
+
             </Grid>
 
         </Grid>

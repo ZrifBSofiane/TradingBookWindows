@@ -60,9 +60,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="exportPDFLayout.xaml.cs">
+      <DependentUpon>exportPDFLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExportButtonLayout.xaml.cs">
+      <DependentUpon>ExportButtonLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExportLayout.xaml.cs">
+      <DependentUpon>ExportLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GoalLayout.xaml.cs">
+      <DependentUpon>GoalLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Asset.cs" />
+    <Compile Include="TradeAccountLayout.xaml.cs">
+      <DependentUpon>TradeAccountLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TradeLayout.xaml.cs">
+      <DependentUpon>TradeLayout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TradeListViewLayout.xaml.cs">
       <DependentUpon>TradeListViewLayout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AssetViewModel.cs" />
+    <Page Include="exportPDFLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExportButtonLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExportLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GoalLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HomeLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,6 +118,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TradeAccountLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TradeLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TradeListViewLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,5 +158,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Image\excel-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Image\pdf.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

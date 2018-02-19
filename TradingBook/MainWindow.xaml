@@ -102,6 +102,12 @@
 
                 </Grid>
 
+                <Grid Grid.Column="6" 
+                        Grid.Row="0"
+                        Background="Pink">
+                    <Button Content="Export" Name="exportButton" Width="Auto" Click="exportButton_Click" />
+                </Grid>
+
 
             </Grid>
 
@@ -118,6 +124,8 @@
 
 
             <local:HomeLayout x:Name="HomeLaout"></local:HomeLayout>
+            <local:TradeLayout x:Name="TradeLayout"></local:TradeLayout>
+            <local:ExportLayout x:Name="ExportLayout"></local:ExportLayout>
             
 
         </Grid>

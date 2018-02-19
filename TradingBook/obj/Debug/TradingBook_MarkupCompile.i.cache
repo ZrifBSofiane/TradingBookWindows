@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\App.xaml
-3-1344693036
+9-66585894
 
-111069136096
+191200190209
 15-645103275
-HomeLayout.xaml;MainWindow.xaml;TradeListViewLayout.xaml;
+exportPDFLayout.xaml;ExportButtonLayout.xaml;ExportLayout.xaml;GoalLayout.xaml;HomeLayout.xaml;MainWindow.xaml;TradeAccountLayout.xaml;TradeLayout.xaml;TradeListViewLayout.xaml;
 
 False
 

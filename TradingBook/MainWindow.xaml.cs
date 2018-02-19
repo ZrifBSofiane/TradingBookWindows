@@ -23,16 +23,30 @@ namespace TradingBook
         public MainWindow()
         {
             InitializeComponent();
+            HomeLaout.Visibility = Visibility.Visible;
+            TradeLayout.Visibility = Visibility.Hidden;
+            ExportLayout.Visibility = Visibility.Hidden;
         }
 
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
             HomeLaout.Visibility = Visibility.Visible;
+            TradeLayout.Visibility = Visibility.Hidden;
+            ExportLayout.Visibility = Visibility.Hidden;
         }
 
         private void tradeButton_Click(object sender, RoutedEventArgs e)
         {
             HomeLaout.Visibility = Visibility.Hidden;
+            TradeLayout.Visibility = Visibility.Visible;
+            ExportLayout.Visibility = Visibility.Hidden;
+        }
+
+        private void exportButton_Click(object sender, RoutedEventArgs e)
+        {
+            HomeLaout.Visibility = Visibility.Hidden;
+            TradeLayout.Visibility = Visibility.Hidden;
+            ExportLayout.Visibility = Visibility.Visible;
         }
     }
 }

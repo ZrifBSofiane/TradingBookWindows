@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="TradingBook.GoalLayout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TradingBook"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="#f0f1f6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <!--Here split into 2 for label and value -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="Number of trades" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+                <Viewbox Grid.Column="1" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="20" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+            </Grid>
+            <!-- END SPLIT VIEW -->
+        </Grid>
+
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <!--Here split into 2 for label and value -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="Number of Losses" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+                <Viewbox Grid.Column="1" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="5" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+            </Grid>
+            <!-- END SPLIT VIEW -->
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2">
+            <!--Here split into 2 for label and value -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="Number of Gain" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+                <Viewbox Grid.Column="1" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="15" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+            </Grid>
+            <!-- END SPLIT VIEW -->
+        </Grid>
+
+
+
+        <Grid Grid.Column="0" Grid.Row="3">
+            <!--Here split into 2 for label and value -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="Number of asset" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+                <Viewbox Grid.Column="1" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="6" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                </Viewbox>
+            </Grid>
+            <!-- END SPLIT VIEW -->
+        </Grid>
+
+
+    </Grid>
+</UserControl>

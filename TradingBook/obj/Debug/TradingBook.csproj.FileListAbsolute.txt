@@ -48,3 +48,15 @@ C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradingBook
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradingBook.pdb
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradeListViewLayout.g.cs
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradeListViewLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradeAccountLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradeLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradeAccountLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradeLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\GoalLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\GoalLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ExportButtonLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ExportLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ExportButtonLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ExportLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\exportPDFLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\exportPDFLayout.baml
