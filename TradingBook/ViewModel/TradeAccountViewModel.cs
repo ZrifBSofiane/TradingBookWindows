@@ -11,11 +11,11 @@ using TradingBook.Model;
 
 namespace TradingBook.ViewModel
 {
-    class AssetViewModel : INotifyPropertyChanged
+    class TradeAccountViewModel : INotifyPropertyChanged
     {
         private Asset asset;
 
-        public AssetViewModel()
+        public TradeAccountViewModel()
         {
             asset = new Asset { Name = "Samsung" };
         }
@@ -80,7 +80,25 @@ namespace TradingBook.ViewModel
                    
                 }
             };
+        }
 
+
+        public void PaintX2()
+        {
+            ChartValues<double> valueChart = new ChartValues<double>();
+            for(int i=0;i<20;i++)
+            {
+                valueChart.Add(i * i);
+            }
+
+            ValueAsset = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Serie 1",
+                    Values = valueChart
+                }
+            };
         }
     }
 }

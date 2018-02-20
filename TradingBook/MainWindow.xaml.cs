@@ -23,6 +23,7 @@ namespace TradingBook
         public MainWindow()
         {
             InitializeComponent();
+            ResearchLayout.Visibility = Visibility.Hidden;
             HomeLaout.Visibility = Visibility.Visible;
             TradeLayout.Visibility = Visibility.Hidden;
             ExportLayout.Visibility = Visibility.Hidden;
@@ -30,6 +31,7 @@ namespace TradingBook
 
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
+            ResearchLayout.Visibility = Visibility.Hidden;
             HomeLaout.Visibility = Visibility.Visible;
             TradeLayout.Visibility = Visibility.Hidden;
             ExportLayout.Visibility = Visibility.Hidden;
@@ -37,6 +39,7 @@ namespace TradingBook
 
         private void tradeButton_Click(object sender, RoutedEventArgs e)
         {
+            ResearchLayout.Visibility = Visibility.Hidden;
             HomeLaout.Visibility = Visibility.Hidden;
             TradeLayout.Visibility = Visibility.Visible;
             ExportLayout.Visibility = Visibility.Hidden;
@@ -44,9 +47,18 @@ namespace TradingBook
 
         private void exportButton_Click(object sender, RoutedEventArgs e)
         {
+            ResearchLayout.Visibility = Visibility.Hidden;
             HomeLaout.Visibility = Visibility.Hidden;
             TradeLayout.Visibility = Visibility.Hidden;
             ExportLayout.Visibility = Visibility.Visible;
+        }
+
+        private void researchButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResearchLayout.Visibility = Visibility.Visible;
+            HomeLaout.Visibility = Visibility.Hidden;
+            TradeLayout.Visibility = Visibility.Hidden;
+            ExportLayout.Visibility = Visibility.Hidden;
         }
     }
 }

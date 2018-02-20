@@ -84,6 +84,7 @@
                 <Grid Grid.Column="2" 
                         Grid.Row="0"
                         Background="BurlyWood">
+                    <Button Content="Research" Name="researchButton" Click="researchButton_Click"></Button>
 
                 </Grid>
                 <Grid Grid.Column="3" 
@@ -126,6 +127,7 @@
             <local:HomeLayout x:Name="HomeLaout"></local:HomeLayout>
             <local:TradeLayout x:Name="TradeLayout"></local:TradeLayout>
             <local:ExportLayout x:Name="ExportLayout"></local:ExportLayout>
+            <local:ResearchLayout x:Name="ResearchLayout"></local:ResearchLayout>
             
 
         </Grid>

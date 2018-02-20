@@ -21,19 +21,17 @@ namespace TradingBook
     /// </summary>
     public partial class TradeAccountLayout : UserControl
     {
-        AssetViewModel viewModel = new AssetViewModel();
+        TradeAccountViewModel viewModel = new TradeAccountViewModel();
         public TradeAccountLayout()
         {
             InitializeComponent();
-
-
-
             base.DataContext = viewModel;
         }
 
         private void volumeMinus_Click(object sender, RoutedEventArgs e)
         {
             viewModel.ModifyName();
+            viewModel.PaintX2();
         }
     }
 }

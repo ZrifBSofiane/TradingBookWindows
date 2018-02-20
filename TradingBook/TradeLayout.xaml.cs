@@ -23,6 +23,7 @@ namespace TradingBook
         public TradeLayout()
         {
             InitializeComponent();
+
         }
     }
 }

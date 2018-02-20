@@ -60,3 +60,7 @@ C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ExportButto
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ExportLayout.baml
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\exportPDFLayout.g.cs
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\exportPDFLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ResearchLayout.g.cs
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ResearchLayout.baml
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\bin\Debug\WPFTextBoxAutoComplete.dll
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\bin\Debug\WPFTextBoxAutoComplete.pdb
