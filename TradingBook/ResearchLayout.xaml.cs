@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveCharts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,8 @@ namespace TradingBook
         List<String> data;
 
         ReasearchViewModel vm = new ReasearchViewModel();
-
+        BloombergInstrument bbInfo = new BloombergInstrument();
+        
 
         public ResearchLayout()
         {
@@ -39,18 +41,16 @@ namespace TradingBook
             base.DataContext = vm;
         }
 
-        private void researchTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            vm.changeList();
-        }
+       
 
         private void researchTB_KeyUp(object sender, KeyEventArgs e)
         {
             bool found = false;
             var border = (resultStack.Parent as ScrollViewer).Parent as Border;
-            var data = AssetTicker.GetData();
+            
 
             string query = (sender as TextBox).Text;
+            var data = bbInfo.SearchTicker(query);
 
             if (query.Length == 0)
             {
@@ -114,6 +114,14 @@ namespace TradingBook
 
             // Add to the panel
             resultStack.Children.Add(block);
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string ticker = researchTB.Text.ToUpper();
+            ticker = ticker.Replace("<", " ");
+            ticker = ticker.Replace(">", "");
+            vm.PopulateChartPrice(ticker);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,33 +12,46 @@ namespace TradingBook.ViewModel
 {
     class ReasearchViewModel : INotifyPropertyChanged
     {
-      /*  private AssetTicker assetTicker;
+        private Asset asset;
+        BloombergHistorical bbH = new BloombergHistorical();
 
         public ReasearchViewModel()
         {
-            assetTicker = new AssetTicker { Ticker = new List<String> { "Hello", "baba", "noo" } };
+            asset = new Asset{ Name="Unknown" };
         }
 
 
-        public AssetTicker AssetTicker
+        public Asset Asset
         {
-            get { return this.assetTicker; }
-            set { this.assetTicker = value; }
+            get { return this.asset; }
+            set { this.asset = value; }
         }
 
-        public List<String> TickerAsset
+        public String NameAsset
         {
-            get { return AssetTicker.Ticker; }
+            get { return Asset.Name; }
             set
             {
-                if (AssetTicker.Ticker != value)
+                if(Asset.Name != value)
                 {
-                    AssetTicker.Ticker = value;
-                    RaisePropertyChanged("TestItems");
+                    Asset.Name = value;
+                }
+            }
+        }
+
+        public SeriesCollection AssetValue
+        {
+            get { return Asset.Value; }
+            set
+            {
+                if (Asset.Value != value)
+                {
+                    Asset.Value = value;
+                    RaisePropertyChanged("AssetValue");
                 }
 
             }
-        }*/
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -53,6 +68,28 @@ namespace TradingBook.ViewModel
         public void changeList()
         {
             //TickerAsset = new List<String> { "Hello", "baba", "noo" };
+        }
+
+        public void PopulateChartPrice(string ticker)
+        {
+            List<Object> result = bbH.GetPriceVolumeValue(ticker, null, "20180101", "20180220");
+            List<double> price = (List<double>)result[1];
+            ChartValues<double> valueChart = new ChartValues<double>();
+            for (int i = 0; i < price.Count; i++)
+            {
+                valueChart.Add(price[i]);
+            }
+
+            NameAsset = ticker;
+            AssetValue = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Serie 1",
+                    Values = valueChart
+                }
+            };
+
         }
 
 

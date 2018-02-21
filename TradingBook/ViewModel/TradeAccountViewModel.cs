@@ -1,4 +1,5 @@
-﻿using LiveCharts;
+﻿using Bloomberglp.Blpapi;
+using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TradingBook.Model;
 
@@ -14,10 +16,11 @@ namespace TradingBook.ViewModel
     public class TradeAccountViewModel : INotifyPropertyChanged
     {
         private Asset asset;
-
+        private BloombergHistorical bbH;
         public TradeAccountViewModel()
         {
             asset = new Asset { Name = "Samsung" };
+            bbH = new BloombergHistorical();
         }
 
 
@@ -100,5 +103,29 @@ namespace TradingBook.ViewModel
                 }
             };
         }
+
+
+        public void PopulateChartPrice(string ticker)
+        {
+            List<Object> result = bbH.GetPriceVolumeValue(ticker, null, "20180101","20180220");
+            List<double> price = (List<double>)result[1];
+            ChartValues<double> valueChart = new ChartValues<double>();
+            for(int i =0; i< price.Count;i++)
+            {
+                valueChart.Add(price[i]);
+            }
+
+            NameAsset = ticker;
+            ValueAsset = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Serie 1",
+                    Values = valueChart
+                }
+            };
+
+        }
+
     }
 }

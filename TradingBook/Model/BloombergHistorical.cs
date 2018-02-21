@@ -48,7 +48,7 @@ namespace TradingBook.Model
             request.Set("startDate", startResearch);
             request.Set("endDate", endResearch);
 
-            request.Set("periodicitySelection", periodicity);
+            //request.Set("periodicitySelection", periodicity);
 
             session.SendRequest(request, null);
 
@@ -68,8 +68,7 @@ namespace TradingBook.Model
 
                     // Loop over all of the messages in this Event
                     foreach (Message msg in eventObject.GetMessages())
-                    {
-                        Console.WriteLine(msg);
+                    { 
                         Element secDataArray = msg.GetElement("securityData");
                         Element securityData = secDataArray.GetElement(3);
                         for (int index = 0; index < securityData.NumValues - 1; index++)

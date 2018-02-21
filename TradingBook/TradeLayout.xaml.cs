@@ -27,15 +27,17 @@ namespace TradingBook
             TradeAccountViewModel vm1 = new TradeAccountViewModel();
             TradeAccountViewModel vm2 = new TradeAccountViewModel();
             TradeAccountViewModel vm3 = new TradeAccountViewModel();
+            TradeAccountViewModel vm4 = new TradeAccountViewModel();
 
             trade1.DataContext = vm1;
             trade2.DataContext = vm2;
             trade3.DataContext = vm3;
+            trade4.DataContext = vm4;
 
-            vm1.PaintX2(1);
-            vm2.PaintX2(2);
-            vm3.PaintX2(3);
-
+            vm1.PopulateChartPrice("AAPL US EQUITY");
+            vm2.PopulateChartPrice("IBM US EQUITY");
+            vm3.PopulateChartPrice("NESN SW EQUITY");
+            vm4.PopulateChartPrice("SMSN LI EQUITY");
         }
     }
 }

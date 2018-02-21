@@ -27,7 +27,10 @@
                 <Grid Grid.Row ="0" Grid.Column="1">
                     <TextBox Name="researchTB" Grid.Row="0" Grid.Column="1" Margin="10,10,10,0" KeyUp="researchTB_KeyUp">
                     </TextBox>
-
+                </Grid>
+                <Grid Grid.Row ="0" Grid.Column="2">
+                    <Button Content="Search"  Grid.Row="0" Grid.Column="1" Width="100" Name="searchButton" Click="searchButton_Click">
+                    </Button>
                 </Grid>
             </Grid>
         </Grid>
@@ -50,12 +53,27 @@
             </Grid>
         </Grid>
 
-        <!-- Chart -->
+        <!-- Chart Price -->
         <Grid Grid.Column="0" Grid.Row="2" Background="#575c93" Margin="30,20,30,10">
             <Grid.Effect>
                 <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
             </Grid.Effect>
-            <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93">
+            <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93" Series="{Binding AssetValue}" Zoom="X">
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+            </lvc:CartesianChart>
+        </Grid>
+
+        <!-- Chart Vol -->
+        <Grid Grid.Column="0" Grid.Row="3" Background="#575c93" Margin="30,20,30,10">
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
+            </Grid.Effect>
+            <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93" Zoom="X">
                 <lvc:CartesianChart.AxisY>
                     <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
                 </lvc:CartesianChart.AxisY>

@@ -31,10 +31,6 @@ namespace TradingBook
             //viewModel.PaintX2(1);
         }
 
-       
-
-
-
         private void volumeMinus_Click(object sender, RoutedEventArgs e)
         {
             
