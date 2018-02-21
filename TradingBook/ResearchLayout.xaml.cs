@@ -122,6 +122,7 @@ namespace TradingBook
             ticker = ticker.Replace("<", " ");
             ticker = ticker.Replace(">", "");
             vm.PopulateChartPrice(ticker);
+            vm.SearchInfo(ticker);
         }
     }
 }

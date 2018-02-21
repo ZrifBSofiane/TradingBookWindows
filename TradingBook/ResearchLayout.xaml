@@ -54,35 +54,147 @@
         </Grid>
 
         <!-- Chart Price -->
-        <Grid Grid.Column="0" Grid.Row="2" Background="#575c93" Margin="30,20,30,10">
-            <Grid.Effect>
-                <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
-            </Grid.Effect>
-            <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93" Series="{Binding AssetValue}" Zoom="X">
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
-                </lvc:CartesianChart.AxisY>
-                <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
-                </lvc:CartesianChart.AxisX>
-            </lvc:CartesianChart>
+        <Grid Grid.Column="0" Grid.Row="2"  >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.Effect>
+                        <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
+                    </Grid.Effect>
+                    <lvc:CartesianChart Margin="10" Background="#575c93" Series="{Binding AssetValue}" Zoom="X">
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.Effect>
+                        <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
+                    </Grid.Effect>
+                    <lvc:CartesianChart Margin="10" Background="#575c93" Zoom="X">
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                </Grid>
+            </Grid>
         </Grid>
 
-        <!-- Chart Vol -->
-        <Grid Grid.Column="0" Grid.Row="3" Background="#575c93" Margin="30,20,30,10">
-            <Grid.Effect>
-                <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
-            </Grid.Effect>
-            <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93" Zoom="X">
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
-                </lvc:CartesianChart.AxisY>
-                <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
-                </lvc:CartesianChart.AxisX>
-            </lvc:CartesianChart>
+        <!-- Chart Volatility and Info -->
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.Effect>
+                        <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
+                    </Grid.Effect>
+                    <lvc:CartesianChart Margin="10" Background="#575c93" Series="{Binding AssetValue}" Zoom="X">
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.Effect>
+                        <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
+                    </Grid.Effect>
+                    <Rectangle Fill="LightGoldenrodYellow" Margin="10"></Rectangle>
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Column="0" Grid.Row="0">
+                            <!--Here split into 2 for label and value -->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Viewbox Grid.Column="0" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="Currency" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                                <Viewbox Grid.Column="1" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding AssetCurrency}" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                            </Grid>
+                            <!-- END SPLIT VIEW -->
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="1">
+                            <!--Here split into 2 for label and value -->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Viewbox Grid.Column="0" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="Sector" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                                <Viewbox Grid.Column="1" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding AssetSector}" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                            </Grid>
+                            <!-- END SPLIT VIEW -->
+                        </Grid>
+
+                        <Grid Grid.Column="0" Grid.Row="2">
+                            <!--Here split into 2 for label and value -->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Viewbox Grid.Column="0" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="Group" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                                <Viewbox Grid.Column="1" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding AssetGroup}" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                            </Grid>
+                            <!-- END SPLIT VIEW -->
+                        </Grid>
+
+
+
+                        <Grid Grid.Column="0" Grid.Row="3">
+                            <!--Here split into 2 for label and value -->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Viewbox Grid.Column="0" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="#1 Peer" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="Expanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                                <Viewbox Grid.Column="1" Margin="40" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding AssetPeer}" Width="Auto" Height="Auto" TextAlignment="Center"  FontFamily="Malgun Gothic" VerticalAlignment="Center" FontStretch="UltraExpanded" TextWrapping="Wrap" Foreground="#FF575C93"/>
+                                </Viewbox>
+                            </Grid>
+                            <!-- END SPLIT VIEW -->
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
         </Grid>
-
-
     </Grid>
 </UserControl>

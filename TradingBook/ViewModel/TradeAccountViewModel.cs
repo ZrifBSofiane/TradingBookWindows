@@ -19,7 +19,7 @@ namespace TradingBook.ViewModel
         private BloombergHistorical bbH;
         public TradeAccountViewModel()
         {
-            asset = new Asset { Name = "Samsung" };
+            asset = new Asset { Name = "Samsung", Currency="USD"};
             bbH = new BloombergHistorical();
         }
 
