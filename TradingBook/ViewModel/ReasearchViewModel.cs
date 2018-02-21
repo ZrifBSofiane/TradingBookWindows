@@ -106,6 +106,19 @@ namespace TradingBook.ViewModel
             }
         }
 
+        public SeriesCollection AssetValuePerformance
+        {
+            get { return Asset.ValuePerformance; }
+            set
+            {
+                if (Asset.ValuePerformance != value)
+                {
+                    Asset.ValuePerformance = value;
+                    RaisePropertyChanged("AssetValuePerformance");
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string propertyName)
@@ -127,10 +140,19 @@ namespace TradingBook.ViewModel
         {
             List<Object> result = bbH.GetPriceVolumeValue(ticker, null, "20180101", "20180220");
             List<double> price = (List<double>)result[1];
+
             ChartValues<double> valueChart = new ChartValues<double>();
             for (int i = 0; i < price.Count; i++)
             {
                 valueChart.Add(price[i]);
+            }
+
+            ChartValues<double> valuePerformance = new ChartValues<double>();
+            double V0 = price[0];
+            for(int i=0; i<price.Count; i++)
+            {
+                double Vt = price[i];
+                valuePerformance.Add((Vt / V0) - 1); // peut etre *100 à voir selon le résultat 
             }
 
             NameAsset = ticker;
@@ -140,6 +162,15 @@ namespace TradingBook.ViewModel
                 {
                     Title = "Serie 1",
                     Values = valueChart
+                }
+            };
+
+            AssetValuePerformance = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Serie 1",
+                    Values = valuePerformance
                 }
             };
         }

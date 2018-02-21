@@ -12,6 +12,7 @@ namespace TradingBook.Model
         #region Variable
         private string name;
         private SeriesCollection valueAsset;
+        private SeriesCollection valuePerformance;
         private string currency;
         private string sector;
         private string group;
@@ -54,6 +55,13 @@ namespace TradingBook.Model
             get { return this.valueAsset; }
             set { this.valueAsset = value; }
         }
+
+        public SeriesCollection ValuePerformance
+        {
+            get { return this.valuePerformance; }
+            set { this.valuePerformance = value; }
+        }
+
 
     }
 }
