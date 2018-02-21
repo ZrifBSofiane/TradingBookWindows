@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Web;
+using TradingBook.ViewModel;
 
 namespace TradingBook
 {
@@ -21,6 +22,8 @@ namespace TradingBook
     /// </summary>
     public partial class HomeLayout : UserControl
     {
+        PortfolioViewModel vm = new PortfolioViewModel();
+
         public HomeLayout()
         {
             InitializeComponent();
@@ -33,7 +36,8 @@ namespace TradingBook
             spanAfterReached.Inlines.Add(new Run("of \nlast days revenue"));
             spanAfterComparaison.Inlines.Add(new Run(" more income \n compared to last month"));
 
-
+            base.DataContext = vm;
+            vm.PopulatePortfolioValue();
 
         }
     }

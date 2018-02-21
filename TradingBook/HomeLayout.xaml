@@ -67,7 +67,7 @@
                     </Grid.Effect>
 
 
-                    <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93">
+                    <lvc:CartesianChart Margin="20,50,20,20" Background="#575c93" Series="{Binding PortfolioValue}" Zoom="X">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
                         </lvc:CartesianChart.AxisY>

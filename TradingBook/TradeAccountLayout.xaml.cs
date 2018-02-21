@@ -26,12 +26,13 @@ namespace TradingBook
         {
             InitializeComponent();
             base.DataContext = viewModel;
+            viewModel.ModifyName();
+            viewModel.PaintX2();
         }
 
         private void volumeMinus_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.ModifyName();
-            viewModel.PaintX2();
+            
         }
     }
 }

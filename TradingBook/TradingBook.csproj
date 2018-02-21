@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bloomberglp.Blpapi">
+      <HintPath>..\..\..\..\Downloads\blpapi_dotnet_3.8.10.1\blpapi_dotnet_3.8.10.1\bin\Bloomberglp.Blpapi.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
@@ -77,6 +80,10 @@
     </Compile>
     <Compile Include="Model\Asset.cs" />
     <Compile Include="Model\AssetTicker.cs" />
+    <Compile Include="Model\BloombergHistorical.cs" />
+    <Compile Include="Model\BloombergInformationEquity.cs" />
+    <Compile Include="Model\BloombergInstrument.cs" />
+    <Compile Include="Model\Portfolio.cs" />
     <Compile Include="ResearchLayout.xaml.cs">
       <DependentUpon>ResearchLayout.xaml</DependentUpon>
     </Compile>
@@ -89,6 +96,7 @@
     <Compile Include="TradeListViewLayout.xaml.cs">
       <DependentUpon>TradeListViewLayout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\PortfolioViewModel.cs" />
     <Compile Include="ViewModel\ReasearchViewModel.cs" />
     <Compile Include="ViewModel\TradeAccountViewModel.cs" />
     <Page Include="exportPDFLayout.xaml">

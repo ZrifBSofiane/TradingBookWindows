@@ -64,3 +64,5 @@ C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ResearchLay
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\ResearchLayout.baml
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\bin\Debug\WPFTextBoxAutoComplete.dll
 C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\bin\Debug\WPFTextBoxAutoComplete.pdb
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\bin\Debug\Bloomberglp.Blpapi.dll
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\bin\Debug\Bloomberglp.Blpapi.xml
