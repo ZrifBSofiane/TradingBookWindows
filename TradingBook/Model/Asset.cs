@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TradingBook.Model
 {
-    class Asset
+    public class Asset
     {
         #region Variable
         private string name;

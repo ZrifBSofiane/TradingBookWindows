@@ -21,18 +21,31 @@ namespace TradingBook
     /// </summary>
     public partial class TradeAccountLayout : UserControl
     {
-        TradeAccountViewModel viewModel = new TradeAccountViewModel();
+       // private TradeAccountViewModel viewModel = new TradeAccountViewModel();
+
         public TradeAccountLayout()
         {
             InitializeComponent();
-            base.DataContext = viewModel;
-            viewModel.ModifyName();
-            viewModel.PaintX2();
+            //base.DataContext = viewModel;
+           // viewModel.ModifyName();
+            //viewModel.PaintX2(1);
         }
+
+       
+
+
 
         private void volumeMinus_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void resetZoomButton_Click(object sender, RoutedEventArgs e)
+        {
+            X.MinValue = double.NaN;
+            X.MaxValue = double.NaN;
+            Y.MinValue = double.NaN;
+            Y.MaxValue = double.NaN;
         }
     }
 }

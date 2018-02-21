@@ -11,7 +11,7 @@ using TradingBook.Model;
 
 namespace TradingBook.ViewModel
 {
-    class TradeAccountViewModel : INotifyPropertyChanged
+    public class TradeAccountViewModel : INotifyPropertyChanged
     {
         private Asset asset;
 
@@ -83,12 +83,12 @@ namespace TradingBook.ViewModel
         }
 
 
-        public void PaintX2()
+        public void PaintX2(int j)
         {
             ChartValues<double> valueChart = new ChartValues<double>();
             for(int i=0;i<20;i++)
             {
-                valueChart.Add(i * i);
+                valueChart.Add(i * i * j);
             }
 
             ValueAsset = new SeriesCollection
