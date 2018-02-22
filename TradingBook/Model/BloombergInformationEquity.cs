@@ -21,7 +21,7 @@ namespace TradingBook.Model
 
         public BloombergInformationEquity()
         {
-            sessionOptions = new SessionOptions();
+          /*  sessionOptions = new SessionOptions();
 
             sessionOptions.ServerHost = "localhost";
             sessionOptions.ServerPort = 8194;
@@ -35,7 +35,7 @@ namespace TradingBook.Model
 
             referenceService = session.GetService("//blp/refdata");
 
-            request = referenceService.CreateRequest("ReferenceDataRequest");
+            request = referenceService.CreateRequest("ReferenceDataRequest");*/
         }
 
 
@@ -54,7 +54,7 @@ namespace TradingBook.Model
             bool done = false;
 
             Dictionary<String, String> result = new Dictionary<string, string>();
-
+            result.Clear();
             while (!done)
             {
                 // Grab the next Event object
@@ -78,8 +78,8 @@ namespace TradingBook.Model
                             if (field.HasElement("INDUSTRY_GROUP")) result.Add("industryGroup", field.GetElementAsString("INDUSTRY_GROUP"));
                             if (field.HasElement("CDS_SPREAD_TICKER_5Y")) result.Add("tickerCDS", field.GetElementAsString("CDS_SPREAD_TICKER_5Y"));
                             Element fieldPeers = field.GetElement("BLOOMBERG_PEERS");
-                            Element firstPeer = fieldPeers.GetValueAsElement(0);
-                            if (firstPeer.HasElement("Peer Ticker")) result.Add("peers", firstPeer.GetElementAsString("Peer Ticker"));
+                           // Element firstPeer =  fieldPeers.GetValueAsElement(0);
+                            //if (firstPeer.HasElement("Peer Ticker")) result.Add("peers", firstPeer.GetElementAsString("Peer Ticker"));
                         }
                     }
                     done = true;

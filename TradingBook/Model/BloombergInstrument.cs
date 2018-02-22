@@ -33,7 +33,7 @@ namespace TradingBook.Model
 
         public BloombergInstrument()
         {
-            sessionOptions = new SessionOptions();
+          /*  sessionOptions = new SessionOptions();
 
             sessionOptions.ServerHost = "localhost";
             sessionOptions.ServerPort = 8194;
@@ -47,7 +47,7 @@ namespace TradingBook.Model
 
             referenceService = session.GetService("//blp/instruments");
 
-            request = referenceService.CreateRequest("instrumentListRequest");
+            request = referenceService.CreateRequest("instrumentListRequest");*/
         }
 
         public List<String> SearchTicker(String ticker)

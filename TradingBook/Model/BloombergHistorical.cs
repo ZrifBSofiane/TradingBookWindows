@@ -20,7 +20,7 @@ namespace TradingBook.Model
 
         public BloombergHistorical()
         {
-            sessionOptions = new SessionOptions();
+           /* sessionOptions = new SessionOptions();
 
             sessionOptions.ServerHost = "localhost";
             sessionOptions.ServerPort = 8194;
@@ -33,7 +33,7 @@ namespace TradingBook.Model
 
             referenceService = session.GetService("//blp/refdata");
 
-            request = referenceService.CreateRequest("HistoricalDataRequest");
+            request = referenceService.CreateRequest("HistoricalDataRequest");*/
         }
 
         public List<Object> GetPriceVolumeValue(String ticker, string periodicity, string startResearch, string endResearch)

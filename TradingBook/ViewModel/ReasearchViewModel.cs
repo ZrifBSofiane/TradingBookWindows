@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TradingBook.Model;
 
 namespace TradingBook.ViewModel
@@ -152,7 +153,7 @@ namespace TradingBook.ViewModel
             for(int i=0; i<price.Count; i++)
             {
                 double Vt = price[i];
-                valuePerformance.Add((Vt / V0) - 1); // peut etre *100 à voir selon le résultat 
+                valuePerformance.Add(( (Vt / V0) - 1) *100); // peut etre *100 à voir selon le résultat 
             }
 
             NameAsset = ticker;
@@ -181,7 +182,7 @@ namespace TradingBook.ViewModel
             AssetCurrency = resultInfo.ContainsKey("currency") ? resultInfo["currency"] : "Unknown";
             AssetGroup = resultInfo.ContainsKey("industryGroup") ? resultInfo["industryGroup"] : "Unknown";
             AssetSector = resultInfo.ContainsKey("industrySector") ? resultInfo["industrySector"] : "Unknown";
-            AssetPeer = resultInfo.ContainsKey("peers") ? resultInfo["peers"] : "Unknown"; 
+            AssetPeer = bbInfo.GetNameCompanyOfEquity(ticker);   
         }
 
 

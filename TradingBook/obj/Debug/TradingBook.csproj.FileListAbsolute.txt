@@ -108,3 +108,47 @@ C:\Users\sbouragb\Downloads\TradingBookWindows-master\TradingBookWindows-master\
 C:\Users\sbouragb\Downloads\TradingBookWindows-master\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.csproj.GenerateResource.Cache
 C:\Users\sbouragb\Downloads\TradingBookWindows-master\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.exe
 C:\Users\sbouragb\Downloads\TradingBookWindows-master\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.pdb
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\TradingBook.exe.config
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\TradingBook.exe
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\TradingBook.pdb
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\Bloomberglp.Blpapi.dll
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\LiveCharts.dll
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\WPFTextBoxAutoComplete.dll
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\Bloomberglp.Blpapi.xml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\LiveCharts.pdb
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\LiveCharts.xml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\bin\Debug\WPFTextBoxAutoComplete.pdb
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.csprojResolveAssemblyReference.cache
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\exportPDFLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\ExportButtonLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\ExportLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\GoalLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\HomeLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\MainWindow.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\ResearchLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradeAccountLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradeLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradeListViewLayout.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\App.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook_MarkupCompile.cache
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook_MarkupCompile.lref
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\exportPDFLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\ExportButtonLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\ExportLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\GoalLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\HomeLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\MainWindow.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\ResearchLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradeAccountLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradeLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradeListViewLayout.baml
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.g.resources
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.Properties.Resources.resources
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.csproj.GenerateResource.Cache
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.csproj.CoreCompileInputs.cache
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.exe
+C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.pdb
