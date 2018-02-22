@@ -185,6 +185,8 @@ namespace TradingBook.ViewModel
             AssetPeer = bbInfo.GetNameCompanyOfEquity(ticker);   
         }
 
+        
+
 
 
     }

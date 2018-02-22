@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using TradingBook.Model;
 
 namespace TradingBook.ViewModel
@@ -15,9 +16,11 @@ namespace TradingBook.ViewModel
 
         private Portfolio portfolio;
 
+
         public PortfolioViewModel()
         {
-            portfolio = new Portfolio { OwnerName = "Sofiane"};
+            portfolio = new Portfolio { OwnerName = "Sofiane" };
+            GeneralSetting.MovingAverageList = new List<MovingAverage>() { new MovingAverage { Period = 3, Color = "Black" }, new MovingAverage { Period = 8, Color = "Black" } };
         }
 
 

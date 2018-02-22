@@ -33,9 +33,14 @@ namespace TradingBook
             trade2.DataContext = vm2;
             trade3.DataContext = vm3;
             trade4.DataContext = vm4;
-            
-         //   vm1.PopulateChartPrice("AAPL US EQUITY");
-           // vm2.PopulateChartPrice("IBM US EQUITY");
+            vm1.PaintX2(1);
+            vm2.PaintX2(2);
+            vm3.PaintX2(9);
+            vm4.PaintX2(5);
+     
+
+            //   vm1.PopulateChartPrice("AAPL US EQUITY");
+            // vm2.PopulateChartPrice("IBM US EQUITY");
             //vm3.PopulateChartPrice("NESN SW EQUITY");
             //vm4.PopulateChartPrice("SMSN LI EQUITY");
         }

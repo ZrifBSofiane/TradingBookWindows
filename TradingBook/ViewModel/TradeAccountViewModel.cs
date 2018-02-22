@@ -89,9 +89,11 @@ namespace TradingBook.ViewModel
         public void PaintX2(int j)
         {
             ChartValues<double> valueChart = new ChartValues<double>();
-            for(int i=0;i<20;i++)
+            
+            for (int i=0;i<20;i++)
             {
-                valueChart.Add(i * i * j);
+                valueChart.Add(Math.Sin(i * i * j));
+                
             }
 
             ValueAsset = new SeriesCollection
@@ -102,6 +104,36 @@ namespace TradingBook.ViewModel
                     Values = valueChart
                 }
             };
+
+            if(GeneralSetting.MovingAverageList.Count!=0) // If there is some Moving average ...
+            {
+                for(int i = 0; i< GeneralSetting.MovingAverageList.Count; i++)
+                {
+                    int period = GeneralSetting.MovingAverageList[i].Period;
+                    if(period < valueChart.Count)
+                    {
+                        ChartValues<double> valueChartMovingAverageTemp = new ChartValues<double>();
+                        // because for the beginning sma is equal to value chart until we can compute the average
+                        for (int k = 0; k < period; k++)
+                            valueChartMovingAverageTemp.Add(valueChart[k]);
+                        // compute average for the rest of data
+                        for (int k = period; k < valueChart.Count; k++)
+                        {
+                            valueChartMovingAverageTemp.Add(valueChart.Skip(k).Take(period).Sum() / period);
+                        }
+
+                        // adding sma
+                        ValueAsset.Add(new LineSeries
+                        {
+                            Title = "SMA"+period,
+                            Values = valueChartMovingAverageTemp
+                        });
+                    }
+                }
+            }
+
+           
+
         }
 
 

@@ -83,6 +83,8 @@
     <Compile Include="Model\BloombergHistorical.cs" />
     <Compile Include="Model\BloombergInformationEquity.cs" />
     <Compile Include="Model\BloombergInstrument.cs" />
+    <Compile Include="Model\GeneralSetting.cs" />
+    <Compile Include="Model\MovingAverage.cs" />
     <Compile Include="Model\Portfolio.cs" />
     <Compile Include="ResearchLayout.xaml.cs">
       <DependentUpon>ResearchLayout.xaml</DependentUpon>
