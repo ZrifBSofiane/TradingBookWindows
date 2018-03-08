@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using TradingBook.Model;
 
 namespace TradingBook.ViewModel
@@ -89,10 +90,12 @@ namespace TradingBook.ViewModel
         public void PaintX2(int j)
         {
             ChartValues<double> valueChart = new ChartValues<double>();
-            
+            ChartValues<double> test = new ChartValues<double>();
+
             for (int i=0;i<20;i++)
             {
                 valueChart.Add(Math.Sin(i * i * j));
+                test.Add(Math.Cos(i));
                 
             }
 
@@ -101,11 +104,13 @@ namespace TradingBook.ViewModel
                 new LineSeries
                 {
                     Title = "Serie 1",
-                    Values = valueChart
+                    Values = valueChart,
+                    ScalesYAt = 0
                 }
             };
 
-            if(GeneralSetting.MovingAverageList.Count!=0) // If there is some Moving average ...
+
+            if (GeneralSetting.MovingAverageList.Count!=0) // If there is some Moving average ...
             {
                 for(int i = 0; i< GeneralSetting.MovingAverageList.Count; i++)
                 {
@@ -125,15 +130,94 @@ namespace TradingBook.ViewModel
                         // adding sma
                         ValueAsset.Add(new LineSeries
                         {
-                            Title = "SMA"+period,
-                            Values = valueChartMovingAverageTemp
+                            Title = "SMA" + period,
+                            Values = valueChartMovingAverageTemp,
+                            Fill = System.Windows.Media.Brushes.Transparent
                         });
                     }
-                }
+                }   
             }
+
+            if(GeneralSetting.isBollingerBands)
+            {
+                ChartValues<double> bollingerAverage = new ChartValues<double>();
+                int period = GeneralSetting.BollingerBand.Period;
+                for (int k = 0; k < period; k++)
+                    bollingerAverage.Add(valueChart[k]);
+                // compute average for the rest of data
+                for (int k = period; k < valueChart.Count; k++)
+                {
+                   bollingerAverage.Add(valueChart.Skip(k).Take(period).Sum() / period);
+                }
+
+
+                ChartValues<double> bollingerTop = new ChartValues<double>();
+                for(int i=1; i< bollingerAverage.Count; i++)
+                {
+                    double result = bollingerAverage[i] + StandardDeviation(bollingerAverage.Take(i).ToList(), bollingerAverage.Take(i).Count());
+                    bollingerTop.Add(result);
+                }
+
+                ChartValues<double> bollingerDown = new ChartValues<double>();
+                for (int i = 1; i < bollingerAverage.Count; i++)
+                {
+                    double result = bollingerAverage[i] - StandardDeviation(bollingerAverage.Take(i).ToList(), bollingerAverage.Take(i).Count());
+                    bollingerDown.Add(result);
+                }
+
+
+                ValueAsset.Add(new LineSeries
+                {
+                    Title = "BollingerAverage",
+                    Values = bollingerAverage,
+                    Stroke = Brushes.Green,
+                    Fill = System.Windows.Media.Brushes.Transparent
+
+
+                });
+
+                ValueAsset.Add(new LineSeries
+                {
+                    Title = "BollingerTop",
+                    Values = bollingerTop,
+                    Stroke = Brushes.Green,
+                    Fill = System.Windows.Media.Brushes.Transparent
+                });
+
+                ValueAsset.Add(new LineSeries
+                {
+                    Title = "BollingerDown",
+                    Values = bollingerDown,
+                    Stroke = Brushes.Green,
+                    Fill = System.Windows.Media.Brushes.Transparent
+                });
+
+
+            }
+
 
            
 
+        }
+
+
+
+
+
+        private static double StandardDeviation(List<double> numberSet, double divisor)
+        {
+            double mean = numberSet.Average();
+            return Math.Sqrt(numberSet.Sum(x => Math.Pow(x - mean, 2)) / divisor);
+        }
+
+        static double PopulationStandardDeviation(List<double> numberSet)
+        {
+            return StandardDeviation(numberSet, numberSet.Count);
+        }
+
+        static double SampleStandardDeviation(List<double> numberSet)
+        {
+            return StandardDeviation(numberSet, numberSet.Count - 1);
         }
 
 
@@ -152,7 +236,7 @@ namespace TradingBook.ViewModel
             {
                 new LineSeries
                 {
-                    Title = "Serie 1",
+                    Title = "Price",
                     Values = valueChart
                 }
             };

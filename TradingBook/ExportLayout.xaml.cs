@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TradingBook.Model;
 
 namespace TradingBook
 {
@@ -23,6 +24,18 @@ namespace TradingBook
         public ExportLayout()
         {
             InitializeComponent();
+        }
+
+        private void exportToExcelButton_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+            ExcelClass temp = new ExcelClass();
+            temp.SaveAsExcel();
+        }
+
+        private void exportToPdfButton_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

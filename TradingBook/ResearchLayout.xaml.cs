@@ -119,6 +119,7 @@ namespace TradingBook
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             string ticker = researchTB.Text.ToUpper();
+            AssetResarch.Name = "heee";
             ticker = ticker.Replace("<", " ");
             ticker = ticker.Replace(">", "");
             vm.PopulateChartPrice(ticker);

@@ -64,7 +64,7 @@
                     <Grid.Effect>
                         <DropShadowEffect Color="#FF9799B1" Opacity="0.5"/>
                     </Grid.Effect>
-                    <lvc:CartesianChart Margin="10" Background="#575c93"  Zoom="X">
+                    <lvc:CartesianChart Margin="10" Background="#575c93" Series="{Binding AssetValueVolatility}" Zoom="X">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Sales" Foreground="#aab1db" ></lvc:Axis>
                         </lvc:CartesianChart.AxisY>

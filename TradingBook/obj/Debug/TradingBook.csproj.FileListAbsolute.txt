@@ -152,3 +152,4 @@ C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-mast
 C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.csproj.CoreCompileInputs.cache
 C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.exe
 C:\Users\sofiane\Downloads\TradingBookWindows-master (1)\TradingBookWindows-master\TradingBook\obj\Debug\TradingBook.pdb
+C:\Users\sofiane\Desktop\TB\TradingBookWindows\TradingBook\obj\Debug\TradingBook.csproj.ResolveComReference.cache

@@ -62,6 +62,13 @@ namespace TradingBook.Model
             set { this.valuePerformance = value; }
         }
 
+        
+        public SeriesCollection ValueVolatility
+        {
+            get { return this.valuePerformance; }
+            set { this.valuePerformance = value; }
+        }
+
 
     }
 }

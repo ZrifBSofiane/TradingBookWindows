@@ -15,7 +15,9 @@ namespace TradingBook.Model
         public static String Periodicity { get; set; } // Periodicity of Chart Value
 
         public static List<MovingAverage> MovingAverageList { get; set; }
+        public static BollingerBands BollingerBand {get; set;}
 
+        public static bool isBollingerBands { get; set; }
         
 
 

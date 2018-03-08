@@ -120,6 +120,19 @@ namespace TradingBook.ViewModel
             }
         }
 
+        public SeriesCollection AssetValueVolatility
+        {
+            get { return Asset.ValueVolatility; }
+            set
+            {
+                if (Asset.ValueVolatility != value)
+                {
+                    Asset.ValueVolatility = value;
+                    RaisePropertyChanged("AssetValueVolatility");
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string propertyName)
@@ -139,6 +152,7 @@ namespace TradingBook.ViewModel
 
         public void PopulateChartPrice(string ticker)
         {
+            // Get historical data
             List<Object> result = bbH.GetPriceVolumeValue(ticker, null, "20180101", "20180220");
             List<double> price = (List<double>)result[1];
 
@@ -147,21 +161,32 @@ namespace TradingBook.ViewModel
             {
                 valueChart.Add(price[i]);
             }
-
-            ChartValues<double> valuePerformance = new ChartValues<double>();
+              
+            // Compute Volatility
+            ChartValues<double> valueVolatility = new ChartValues<double>();
             double V0 = price[0];
             for(int i=0; i<price.Count; i++)
             {
                 double Vt = price[i];
-                valuePerformance.Add(( (Vt / V0) - 1) *100); // peut etre *100 à voir selon le résultat 
+                valueVolatility.Add(( (Vt / V0) - 1) *100); // peut etre *100 à voir selon le résultat 
             }
 
             NameAsset = ticker;
+
+            // Compute Performance
+            ChartValues<double> valuePerformance= new ChartValues<double>();
+            for(int i=0; i<price.Count; i++)
+            {
+                double resultPerf = PopulationStandardDeviation(valueVolatility.Take(i).ToList());
+                valuePerformance.Add(resultPerf);
+            }
+
+           
             AssetValue = new SeriesCollection
             {
                 new LineSeries
                 {
-                    Title = "Serie 1",
+                    Title = "Asset Value",
                     Values = valueChart
                 }
             };
@@ -170,22 +195,69 @@ namespace TradingBook.ViewModel
             {
                 new LineSeries
                 {
-                    Title = "Serie 1",
+                    Title = "Performance",
                     Values = valuePerformance
                 }
             };
+
+            AssetValueVolatility = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Volatility",
+                    Values = valueVolatility
+                }
+            };
+
+
+            // Here for AssetReaserch
+            AssetResarch.ValuePerformance = valuePerformance.ToList();
+            AssetResarch.Value = valueChart.ToList();
+            AssetResarch.ValueVolatility = valueVolatility.ToList();
+            
+
+
+
+
         }
 
         public void SearchInfo(String ticker)
         {
             Dictionary<String, String> resultInfo = bbInfo.SearchInformation(ticker);
+            String peer = bbInfo.GetNameCompanyOfEquity(ticker);
+
             AssetCurrency = resultInfo.ContainsKey("currency") ? resultInfo["currency"] : "Unknown";
             AssetGroup = resultInfo.ContainsKey("industryGroup") ? resultInfo["industryGroup"] : "Unknown";
             AssetSector = resultInfo.ContainsKey("industrySector") ? resultInfo["industrySector"] : "Unknown";
-            AssetPeer = bbInfo.GetNameCompanyOfEquity(ticker);   
+            AssetPeer = peer;
+
+
+            AssetResarch.Ticker = ticker;
+            AssetResarch.Currency = resultInfo.ContainsKey("currency") ? resultInfo["currency"] : "Unknown";
+            AssetResarch.Sector = resultInfo.ContainsKey("industrySector") ? resultInfo["industrySector"] : "Unknown";
+            AssetResarch.Group = resultInfo.ContainsKey("industryGroup") ? resultInfo["industryGroup"] : "Unknown";
+            AssetResarch.Peer = peer;
         }
 
-        
+
+
+        private static double StandardDeviation(List<double> numberSet, double divisor)
+        {
+            double mean = numberSet.Average();
+            return Math.Sqrt(numberSet.Sum(x => Math.Pow(x - mean, 2)) / divisor);
+        }
+
+        static double PopulationStandardDeviation(List<double> numberSet)
+        {
+            return StandardDeviation(numberSet, numberSet.Count);
+        }
+
+        static double SampleStandardDeviation(List<double> numberSet)
+        {
+            return StandardDeviation(numberSet, numberSet.Count - 1);
+        }
+
+
 
 
 

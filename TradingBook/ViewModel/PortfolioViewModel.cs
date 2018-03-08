@@ -20,7 +20,17 @@ namespace TradingBook.ViewModel
         public PortfolioViewModel()
         {
             portfolio = new Portfolio { OwnerName = "Sofiane" };
-            GeneralSetting.MovingAverageList = new List<MovingAverage>() { new MovingAverage { Period = 3, Color = "Black" }, new MovingAverage { Period = 8, Color = "Black" } };
+            GeneralSetting.MovingAverageList = new List<MovingAverage>() {
+                /*new MovingAverage { Period = 3, Color = "Black" },
+                new MovingAverage { Period = 8, Color = "Black" }*/
+            };
+
+
+                GeneralSetting.isBollingerBands = true;
+            GeneralSetting.BollingerBand = new BollingerBands()
+            {
+                Period = 8
+            };
         }
 
 
